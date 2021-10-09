@@ -171,15 +171,13 @@ function verDemo() {
 
   const partidaGameOfLife = new gameOfLife(numero_filas, numero_columnas);
 
-  for (let x = 0; x < numero_columnas; x++) {
-    for (let y = 0; y < numero_filas; y++) {
+  for (let x = 0; x < numero_filas; x++) {
+    for (let y = 0; y < numero_columnas; y++) {
       debugger;
-      const int1 = `${y}-${x}-1`;
+      const int1 = `${x}-${y}-1`;
       if (document.getElementById(int1) !== null) {
         partidaGameOfLife.añadirVida(x, y);
       }
-      //const value1 = document.getElementById(int1);
-      //const value2 = document.getElementById(int2);
     }
   }
 }
