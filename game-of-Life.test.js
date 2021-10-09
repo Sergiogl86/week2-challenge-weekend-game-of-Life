@@ -139,3 +139,40 @@ describe("Given rule1 function", function () {
     });
   });
 });
+
+describe("Given rule2 function", function () {
+  describe("When we have a array = [[0,0,0],[1,1,1],[0,0,0]], and use rule2 on position x = 1 y = 1", function () {
+    test("Then should return true", function () {
+      const imput = [
+        [0, 0, 0],
+        [1, 1, 1],
+        [0, 0, 0],
+      ];
+      const expected = true;
+
+      const testGameOfLife = new gameOfLife();
+      testGameOfLife.copiarArray(imput);
+
+      const result = testGameOfLife.rule2(1, 1);
+
+      expect(result).toBe(expected);
+    });
+  });
+  describe("When we have a array = [[0,0,0],[0,1,1],[0,0,0]], and use rule1 on position x = 1 y = 1", function () {
+    test("Then should return false", function () {
+      const imput = [
+        [0, 0, 0],
+        [0, 1, 1],
+        [0, 0, 0],
+      ];
+      const expected = false;
+
+      const testGameOfLife = new gameOfLife();
+      testGameOfLife.copiarArray(imput);
+
+      const result = testGameOfLife.rule2(1, 1);
+
+      expect(result).toBe(expected);
+    });
+  });
+});
