@@ -7,22 +7,37 @@
     <title>Game of Life || Week 2 || Challenge Weekend</title>
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
+    <script src="./script.js"></script>
   </head>
   <body>
     <div class="main">
       <header class="header"><h1>Hola mundo!</h1></header>
       <main class="gameoflife">
         //programa//
-        <section class="gameoflife__cuadricula">//cuadricula//</section>
+        <section class="gameoflife__cuadricula"></section>
         <section class="gameoflife__botones">
-          <div>//boton1// <button>Jugar!</button></div>
           <div>
-            //boton2//
-            <button>Jugar!</button>
+            //boton1//
+            <button onclick="Empezar()">Jugar!</button>
           </div>
           <div>
-            //boton3//
-            <button>Jugar!</button>
+            //boton2//
+            <button onclick="color2(5, 5)">Jugar!</button>
+          </div>
+          <div>
+            //Espacio 3//
+            <input
+              type="text"
+              class="gameoflife__numero_filas"
+              required
+              value="Numero Filas"
+            />
+            <input
+              type="text"
+              class="gameoflife__numero_columnas"
+              required
+              value="Numero Columnas"
+            />
           </div>
         </section>
         <footer></footer>

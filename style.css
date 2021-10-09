@@ -33,10 +33,28 @@ body {
 .gameoflife__cuadricula {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   width: 90%;
   height: 75%;
   background-color: sienna;
+}
+.gameoflife__cell-x {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 20px;
+  padding: 0px;
+  background-color: blue;
+}
+.gameoflife__cell-y {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  margin: 2px;
 }
 .gameoflife__botones {
   width: 90%;
