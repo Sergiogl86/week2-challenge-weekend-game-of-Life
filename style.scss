@@ -46,18 +46,27 @@ body {
     padding: 0px;
     background-color: blue;
   }
-  &__cell-y {
+  &__botones {
+    width: 90%;
+    height: 20%;
+    background-color: rgb(143, 160, 45);
+  }
+  &__dead {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 10px;
     height: 10px;
-    background-color: white;
+    background-color: grey;
     margin: 2px;
   }
-  &__botones {
-    width: 90%;
-    height: 20%;
-    background-color: rgb(143, 160, 45);
+  &__life {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    margin: 2px;
   }
 }

@@ -47,19 +47,28 @@ body {
   padding: 0px;
   background-color: blue;
 }
-.gameoflife__cell-y {
+.gameoflife__botones {
+  width: 90%;
+  height: 20%;
+  background-color: #8fa02d;
+}
+.gameoflife__dead {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 10px;
   height: 10px;
-  background-color: white;
+  background-color: grey;
   margin: 2px;
 }
-.gameoflife__botones {
-  width: 90%;
-  height: 20%;
-  background-color: #8fa02d;
+.gameoflife__life {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10px;
+  height: 10px;
+  background-color: green;
+  margin: 2px;
 }
 
 /*# sourceMappingURL=style.css.map */
