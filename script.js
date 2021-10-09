@@ -32,7 +32,7 @@ class gameOfLife {
     if (indiceX < 0) {
       indiceX = indiceX + 1;
       indiceXTop = 2;
-    } else if (indiceX + indiceXTop >= this.tablero.length) {
+    } else if (indiceX + indiceXTop > this.tablero.length) {
       indiceXTop = 2;
     }
     if (indiceY < 0) {
@@ -154,9 +154,23 @@ class gameOfLife {
   }
 }
 
-const tablero = new gameOfLife();
+module.exports = { gameOfLife };
 
-tablero.jugarGameOfLife();
+const imput = [
+  [0, 0, 0],
+  [1, 0, 1],
+  [1, 1, 1],
+];
+
+const testGameOfLife = new gameOfLife();
+testGameOfLife.copiarArray(imput);
+
+debugger;
+const result = testGameOfLife.comprobarVecinos(1, 1);
+
+//const tablero = new gameOfLife();
+
+//tablero.jugarGameOfLife();
 
 /*const nuevaArray = [
   [0, 0, 0, 0, 0],
