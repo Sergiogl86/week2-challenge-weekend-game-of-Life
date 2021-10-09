@@ -24,6 +24,31 @@ describe("Given copiarArray function", function () {
   });
 });
 
+describe("Given añadirVida function", function () {
+  describe("When we have a array = [[0,1,0],[1,0,1],[0,1,0]], and use añadirVida in position x=1 y=1", function () {
+    test("Then should return [[0,1,0],[1,1,1],[0,1,0]]", function () {
+      const imput = [
+        [0, 1, 0],
+        [1, 0, 1],
+        [0, 1, 0],
+      ];
+      const expected = [
+        [0, 1, 0],
+        [1, 1, 1],
+        [0, 1, 0],
+      ];
+
+      const testGameOfLife = new gameOfLife();
+      testGameOfLife.copiarArray(imput);
+      testGameOfLife.añadirVida(1, 1);
+
+      const result = testGameOfLife.tablero;
+
+      expect(result).toEqual(expected);
+    });
+  });
+});
+
 describe("Given comprobarVecinos function", function () {
   describe("When we have a array = [[0,1,0],[1,0,1],[0,1,0]], comprobarVecinos in position x = 1 y = 1", function () {
     test("Then should return 4", function () {
