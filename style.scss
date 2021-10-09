@@ -9,7 +9,6 @@ body {
   flex-direction: column;
   width: 600px;
   height: 100vh;
-  background-color: sandybrown;
 }
 
 .header {
@@ -35,7 +34,7 @@ body {
     justify-content: center;
     width: 90%;
     height: 75%;
-    background-color: sienna;
+    background-color: black;
   }
   &__cell-x {
     display: flex;
@@ -44,20 +43,29 @@ body {
     flex-direction: column;
     width: 20px;
     padding: 0px;
-    background-color: blue;
-  }
-  &__cell-y {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 10px;
-    height: 10px;
-    background-color: white;
-    margin: 2px;
+    background-color: rgb(14, 14, 104);
   }
   &__botones {
     width: 90%;
     height: 20%;
     background-color: rgb(143, 160, 45);
+  }
+  &__dead {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    background-color: grey;
+    margin: 2px;
+  }
+  &__life {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    margin: 2px;
   }
 }
