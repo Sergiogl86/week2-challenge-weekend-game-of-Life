@@ -1,5 +1,3 @@
-const { functionsIn } = require("lodash");
-
 class gameOfLife {
   constructor(alto, ancho) {
     this.tablero = [];
@@ -159,6 +157,32 @@ class gameOfLife {
     } while (seguir === "si");
   }
 }
+module.exports = { gameOfLife };
+
+function verDemo() {
+  debugger;
+  const numero_filas = Number(
+    document.getElementsByClassName("gameoflife__numero_filas")[0].value
+  );
+
+  const numero_columnas = Number(
+    document.getElementsByClassName("gameoflife__numero_columnas")[0].value
+  );
+
+  const partidaGameOfLife = new gameOfLife(numero_filas, numero_columnas);
+
+  for (let x = 0; x < numero_columnas; x++) {
+    for (let y = 0; y < numero_filas; y++) {
+      debugger;
+      const int1 = `${y}-${x}-1`;
+      if (document.getElementById(int1) !== null) {
+        partidaGameOfLife.añadirVida(x, y);
+      }
+      //const value1 = document.getElementById(int1);
+      //const value2 = document.getElementById(int2);
+    }
+  }
+}
 
 function Empezar() {
   const numero_filas = Number(
@@ -168,6 +192,7 @@ function Empezar() {
   const numero_columnas = Number(
     document.getElementsByClassName("gameoflife__numero_columnas")[0].value
   );
+
   for (let x = 0; x < numero_columnas; x++) {
     const jugadorX = document.getElementsByClassName("gameoflife__cuadricula");
     const divX = document.createElement("div");
@@ -177,7 +202,7 @@ function Empezar() {
       const jugadorY = document.getElementsByClassName("gameoflife__cell-x");
       const divY = document.createElement("div");
       divY.className += "gameoflife__dead";
-      divY.id += `${y}-${x}-d`;
+      divY.id += `${y}-${x}-0`;
       divY.onclick = añadirVida;
       jugadorY[x].appendChild(divY);
     }
@@ -187,14 +212,8 @@ function Empezar() {
 function añadirVida() {
   this.className = "gameoflife__life";
   const auxId = this.id.split("-");
-  this.id = `${auxId[0]}-${auxId[1]}-l`;
+  this.id = `${auxId[0]}-${auxId[1]}-1`;
 }
-
-const partidaGameOfLife = new gameOfLife(10, 10);
-
-partidaGameOfLife.crearTablero(10, 10);
-
-module.exports = { gameOfLife };
 
 /*
 function color2(numero_filas, numero_columnas) {
