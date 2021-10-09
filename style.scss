@@ -32,10 +32,28 @@ body {
   &__cuadricula {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     width: 90%;
     height: 75%;
     background-color: sienna;
+  }
+  &__cell-x {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20px;
+    padding: 0px;
+    background-color: blue;
+  }
+  &__cell-y {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    margin: 2px;
   }
   &__botones {
     width: 90%;
