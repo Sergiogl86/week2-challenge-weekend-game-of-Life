@@ -9,7 +9,6 @@ body {
   flex-direction: column;
   width: 600px;
   height: 100vh;
-  background-color: sandybrown;
 }
 
 .header {
@@ -36,7 +35,7 @@ body {
   justify-content: center;
   width: 90%;
   height: 75%;
-  background-color: sienna;
+  background-color: black;
 }
 .gameoflife__cell-x {
   display: flex;
@@ -45,7 +44,7 @@ body {
   flex-direction: column;
   width: 20px;
   padding: 0px;
-  background-color: blue;
+  background-color: #0e0e68;
 }
 .gameoflife__botones {
   width: 90%;

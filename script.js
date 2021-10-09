@@ -160,7 +160,6 @@ class gameOfLife {
 module.exports = { gameOfLife };
 
 function verDemo() {
-  debugger;
   const numero_filas = Number(
     document.getElementsByClassName("gameoflife__numero_filas")[0].value
   );
@@ -173,10 +172,45 @@ function verDemo() {
 
   for (let x = 0; x < numero_filas; x++) {
     for (let y = 0; y < numero_columnas; y++) {
-      debugger;
       const int1 = `${x}-${y}-1`;
       if (document.getElementById(int1) !== null) {
         partidaGameOfLife.añadirVida(x, y);
+      }
+    }
+  }
+  const tirada = new gameOfLife();
+
+  tirada.copiarArray(partidaGameOfLife.tablero);
+
+  for (let x = 0; x < tirada.tablero.length; x++) {
+    for (let y = 0; y < tirada.tablero[x].length; y++) {
+      if (tirada.rule1(x, y)) {
+        partidaGameOfLife.tablero[x][y] = 0;
+        const int1 = `${x}-${y}-1`;
+        const ficha = document.getElementById(int1);
+        ficha.className = "gameoflife__dead";
+        ficha.id = `${x}-${y}-0`;
+      }
+      if (tirada.rule2(x, y)) {
+        partidaGameOfLife.tablero[x][y] = 1;
+        const int1 = `${x}-${y}-1`;
+        const ficha = document.getElementById(int1);
+        ficha.className = "gameoflife__life";
+        ficha.id = `${x}-${y}-1`;
+      }
+      if (tirada.rule3(x, y)) {
+        partidaGameOfLife.tablero[x][y] = 0;
+        const int1 = `${x}-${y}-1`;
+        const ficha = document.getElementById(int1);
+        ficha.className = "gameoflife__dead";
+        ficha.id = `${x}-${y}-0`;
+      }
+      if (tirada.rule4(x, y)) {
+        partidaGameOfLife.tablero[x][y] = 1;
+        const int1 = `${x}-${y}-0`;
+        const ficha = document.getElementById(int1);
+        ficha.className = "gameoflife__life";
+        ficha.id = `${x}-${y}-1`;
       }
     }
   }
@@ -208,9 +242,14 @@ function Empezar() {
 }
 
 function añadirVida() {
-  this.className = "gameoflife__life";
   const auxId = this.id.split("-");
-  this.id = `${auxId[0]}-${auxId[1]}-1`;
+  if (auxId[2] === "1") {
+    this.className = "gameoflife__dead";
+    this.id = `${auxId[0]}-${auxId[1]}-0`;
+  } else {
+    this.className = "gameoflife__life";
+    this.id = `${auxId[0]}-${auxId[1]}-1`;
+  }
 }
 
 /*
