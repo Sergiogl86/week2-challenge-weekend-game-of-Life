@@ -65,6 +65,7 @@ class gameOfLife {
     console.log(this.comprobarVecinos(posX, posY));
     return false;
   }
+
   rule2(posX, posY) {
     // Rule 2 - Any live cell with two or three live neighbours lives on to the next generation.
     if (
@@ -76,6 +77,7 @@ class gameOfLife {
     }
     return false;
   }
+
   rule3(posX, posY) {
     // Rule 3 - Any live cell with more than three live neighbours dies, as if by overpopulation.
     if (
@@ -86,6 +88,7 @@ class gameOfLife {
     }
     return false;
   }
+
   rule4(posX, posY) {
     // Rule 4 - Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.
     if (
@@ -96,6 +99,7 @@ class gameOfLife {
     }
     return false;
   }
+
   jugarGameOfLife() {
     let alto = prompt("Dime el alto del tablero");
     let ancho = prompt("Dime el ancho del tablero");
