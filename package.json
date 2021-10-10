@@ -4,7 +4,8 @@
   "description": "",
   "main": "script.js",
   "scripts": {
-    "test": "npx jest --watchAll --collect-coverage"
+    "test": "npx jest --watchAll --collect-coverage",
+    "sass": "sass build/style.scss src/sytle.css"
   },
   "keywords": [],
   "author": "",

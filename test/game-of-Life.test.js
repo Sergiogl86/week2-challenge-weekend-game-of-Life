@@ -1,4 +1,4 @@
-const { gameOfLife } = require("./script");
+const { gameOfLife } = require("../src/script.js");
 
 describe("Given copiarArray function", function () {
   describe("When we have a array = [[0,1,0],[1,0,1],[0,1,0]], and use copiarArray()", function () {
