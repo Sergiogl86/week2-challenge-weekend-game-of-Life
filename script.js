@@ -27,31 +27,8 @@ class gameOfLife {
     let numVecinos = 0;
     let indiceX = 0;
     let indiceY = 0;
-    /*let indiceX = posX - 1;
-    let indiceXTop = 3;
-    let indiceY = posY - 1;
-    let indiceYTop = 3;
-    if (indiceX < 0) {
-      indiceX = indiceX + 1;
-      indiceXTop = 2;
-    } else if (indiceX + indiceXTop > this.tablero.length) {
-      indiceXTop = 2;
-    }
-    if (indiceY < 0) {
-      indiceY = indiceY + 1;
-      indiceYTop = 2;
-    } else if (indiceY + indiceYTop > this.tablero[0].length) {
-      indiceYTop = 2;
-    }*/
     for (let x = posX - 1; x < posX + 2; x++) {
       for (let y = posY - 1; y < posY + 2; y++) {
-        /*if (0 < x < this.tablero.length && 0 < y < this.tablero[0].length) {
-          if (this.tablero[x][y] === 1) {
-            numVecinos = numVecinos + 1;
-          }
-        }*/
-        //if (posX === 4 && posY === 1) {
-        //}
         if (x < 0) {
           indiceX = this.tablero.length - 1;
         } else if (x === this.tablero.length) {
@@ -119,67 +96,14 @@ class gameOfLife {
     }
     return false;
   }
-
-  jugarGameOfLife() {
-    let alto = prompt("Dime el alto del tablero");
-    let ancho = prompt("Dime el ancho del tablero");
-
-    const partida = new gameOfLife(+ancho, +alto);
-
-    console.table(partida.tablero);
-
-    console.table("Creo el tablero!");
-
-    let seguir;
-
-    do {
-      do {
-        let coordenadaX = prompt("Dime coordenada x para introducir Vida");
-        let coordenadaY = prompt("Dime coordenada y para introducir Vida");
-
-        partida.añadirVida(+coordenadaX, +coordenadaY);
-
-        console.table(partida.tablero);
-        seguir = prompt("Quieres añadir mas vida, introduce mas");
-      } while (seguir === "mas");
-
-      const tirada = new gameOfLife();
-      tirada.copiarArray(partida.tablero);
-      console.table("Tablero despues de meter vida!");
-
-      console.table(tirada.tablero);
-      console.table("Creo tablero secundario!");
-
-      for (let x = 0; x < tirada.tablero.length; x++) {
-        for (let y = 0; y < tirada.tablero[x].length; y++) {
-          if (tirada.rule1(x, y)) {
-            partida.tablero[x][y] = 0;
-          }
-          if (tirada.rule2(x, y)) {
-            partida.tablero[x][y] = 1;
-          }
-          if (tirada.rule3(x, y)) {
-            partida.tablero[x][y] = 0;
-          }
-          if (tirada.rule4(x, y)) {
-            partida.tablero[x][y] = 1;
-          }
-        }
-      }
-
-      console.table(tirada.tablero);
-      console.table("Tablero que no ha de cambiar de tirada");
-
-      console.table(partida.tablero);
-      console.table("Tablero despues del turno!");
-
-      seguir = prompt("Quieres seguir jugando, di que si");
-    } while (seguir === "si");
-  }
 }
-module.exports = { gameOfLife };
 
 function verDemo() {
+  const loop = document.getElementsByClassName("gameoflife__loop");
+  loop[0].style.display = "none";
+  const pararLoop = document.getElementsByClassName("gameoflife__pararloop");
+  pararLoop[0].style.display = "flex";
+
   const numero_filas = Number(
     document.getElementsByClassName("gameoflife__numero_filas")[0].value
   );
@@ -206,8 +130,8 @@ function verDemo() {
     for (let y = 0; y < tirada.tablero[x].length; y++) {
       if (tirada.rule1(x, y)) {
         partidaGameOfLife.tablero[x][y] = 0;
-        const int1 = `${x}-${y}-1`;
-        const ficha = document.getElementById(int1);
+        const crearId = `${x}-${y}-1`;
+        const ficha = document.getElementById(crearId);
         ficha.className = "gameoflife__dead";
         ficha.id = `${x}-${y}-0`;
       }
@@ -237,7 +161,6 @@ function verDemo() {
 }
 
 function Empezar() {
-  debugger;
   const crear_tablero = document.getElementsByClassName("gameoflife__Crear");
   crear_tablero[0].style.display = "none";
   const reload = document.getElementsByClassName("gameoflife__reload");
@@ -278,23 +201,23 @@ function añadirVida() {
   }
 }
 
+//const loop_program = 0;
+
 function loop() {
-  const loop = setInterval(verDemo, 500);
+  const demo = document.getElementsByClassName("gameoflife__demo");
+  demo[0].style.backgroundColor = "green";
+  loop_program = setInterval(verDemo, 500);
 }
 
-/*
-function color2(numero_filas, numero_columnas) {
-  for (let x = 0; x < numero_filas; x++) {
-    jugadorX = document.getElementsByClassName("gameoflife__cuadricula");
-    const divX = document.createElement("div");
-    divX.className += "gameoflife__cell-x";
-    jugadorX[0].appendChild(divX);
-    for (let y = 0; y < numero_columnas; y++) {
-      jugadorY = document.getElementsByClassName("gameoflife__cell-x");
-      const divY = document.createElement("div");
-      divY.className += "gameoflife__cell-y";
+function pararLoop() {
+  const loop = document.getElementsByClassName("gameoflife__loop");
+  loop[0].style.display = "flex";
+  const pararLoop = document.getElementsByClassName("gameoflife__pararloop");
+  pararLoop[0].style.display = "none";
 
-      jugadorY[x].appendChild(divY);
-    }
-  }
-}*/
+  const demo = document.getElementsByClassName("gameoflife__demo");
+  demo[0].style.backgroundColor = "red";
+  clearTimeout(loop_program);
+}
+
+module.exports = { gameOfLife };
