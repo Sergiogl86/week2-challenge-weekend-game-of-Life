@@ -201,8 +201,6 @@ function añadirVida() {
   }
 }
 
-//const loop_program = 0;
-
 function loop() {
   const demo = document.getElementsByClassName("gameoflife__demo");
   demo[0].style.backgroundColor = "green";

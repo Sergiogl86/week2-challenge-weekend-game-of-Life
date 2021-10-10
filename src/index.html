@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Game of Life || Week 2 || Challenge Weekend</title>
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./sytle.css" />
     <script src="./script.js"></script>
   </head>
   <body>
@@ -30,20 +30,23 @@
             </button>
           </div>
           <div class="gameoflife__panel">
-            <h2 class="gameoflife__dimensiones">Dimensiones -></h2>
+            <h2 class="gameoflife__dimensiones">Filas-></h2>
             <input
-              type="number"
+              type="range"
               class="gameoflife__numero_filas"
-              required
-              placeholder="Filas - menor a 32"
-              max="32"
+              name="numero_filas"
+              min="0"
+              max="28"
+              step="1"
             />
+            <h2 class="gameoflife__dimensiones">Columnas-></h2>
             <input
-              type="number"
+              type="range"
               class="gameoflife__numero_columnas"
-              required
-              placeholder="Columnas - menor a 22"
+              name="numero_columnas"
+              min="0"
               max="22"
+              step="1"
             />
             <input type="number" class="gameoflife__demo" required />
           </div>
