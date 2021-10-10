@@ -68,13 +68,13 @@ describe("Given comprobarVecinos function", function () {
     });
   });
   describe("When we have a array = [[0,1,0],[1,0,1],[0,1,0]], comprobarVecinos in position x = 0 y = 0", function () {
-    test("Then should return 2", function () {
+    test("Then should return 4", function () {
       const imput = [
         [0, 1, 0],
         [1, 0, 1],
         [0, 1, 0],
       ];
-      const expected = 2;
+      const expected = 4;
 
       const testGameOfLife = new gameOfLife();
       testGameOfLife.copiarArray(imput);
@@ -85,13 +85,13 @@ describe("Given comprobarVecinos function", function () {
     });
   });
   describe("When we have a array = [[0,1,0],[1,0,1],[0,1,0]], comprobarVecinos in position x = 2 y = 2", function () {
-    test("Then should return 2", function () {
+    test("Then should return 4", function () {
       const imput = [
         [0, 1, 0],
         [1, 0, 1],
         [0, 1, 0],
       ];
-      const expected = 2;
+      const expected = 4;
 
       const testGameOfLife = new gameOfLife();
       testGameOfLife.copiarArray(imput);

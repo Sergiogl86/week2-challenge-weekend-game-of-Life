@@ -25,7 +25,9 @@ class gameOfLife {
 
   comprobarVecinos(posX, posY) {
     let numVecinos = 0;
-    let indiceX = posX - 1;
+    let indiceX = 0;
+    let indiceY = 0;
+    /*let indiceX = posX - 1;
     let indiceXTop = 3;
     let indiceY = posY - 1;
     let indiceYTop = 3;
@@ -40,13 +42,33 @@ class gameOfLife {
       indiceYTop = 2;
     } else if (indiceY + indiceYTop > this.tablero[0].length) {
       indiceYTop = 2;
-    }
-    for (let x = indiceX; x < indiceX + indiceXTop; x++) {
-      for (let y = indiceY; y < indiceY + indiceYTop; y++) {
-        if (0 < x < this.tablero.length && 0 < y < this.tablero[0].length) {
+    }*/
+    for (let x = posX - 1; x < posX + 2; x++) {
+      for (let y = posY - 1; y < posY + 2; y++) {
+        /*if (0 < x < this.tablero.length && 0 < y < this.tablero[0].length) {
           if (this.tablero[x][y] === 1) {
             numVecinos = numVecinos + 1;
           }
+        }*/
+        //if (posX === 4 && posY === 1) {
+        //}
+        if (x < 0) {
+          indiceX = this.tablero.length - 1;
+        } else if (x === this.tablero.length) {
+          indiceX = 0;
+        } else {
+          indiceX = x;
+        }
+
+        if (y < 0) {
+          indiceY = this.tablero[0].length - 1;
+        } else if (y === this.tablero[0].length) {
+          indiceY = 0;
+        } else {
+          indiceY = y;
+        }
+        if (this.tablero[indiceX][indiceY] === 1) {
+          numVecinos = numVecinos + 1;
         }
       }
     }
@@ -59,10 +81,8 @@ class gameOfLife {
       this.tablero[posX][posY] === 1 &&
       this.comprobarVecinos(posX, posY) < 2
     ) {
-      console.log(this.comprobarVecinos(posX, posY));
       return true;
     }
-    console.log(this.comprobarVecinos(posX, posY));
     return false;
   }
 
