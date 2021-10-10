@@ -14,6 +14,7 @@ body {
   flex-direction: column;
   width: 600px;
   height: 98vh;
+  min-height: 850px;
 }
 
 .header {
@@ -32,6 +33,7 @@ body {
   width: 90%;
   flex-grow: 1;
   background-color: black;
+  border-radius: 15px;
   &__cuadricula {
     display: flex;
     align-items: center;
@@ -39,6 +41,8 @@ body {
     width: 90%;
     height: 75%;
     background-color: grey;
+    border-radius: 15px;
+    margin-top: 10px;
   }
   &__cell-x {
     display: flex;
@@ -75,6 +79,9 @@ body {
     }
   }
   &__reload {
+    display: none;
+  }
+  &__pararloop {
     display: none;
   }
   &__panel {
@@ -114,5 +121,9 @@ body {
   &__footer {
     align-self: flex-end;
     margin-right: 10px;
+  }
+  &__demo {
+    width: 15px;
+    background-color: red;
   }
 }
