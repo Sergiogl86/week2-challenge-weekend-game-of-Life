@@ -237,6 +237,12 @@ function verDemo() {
 }
 
 function Empezar() {
+  debugger;
+  const crear_tablero = document.getElementsByClassName("gameoflife__Crear");
+  crear_tablero[0].style.display = "none";
+  const reload = document.getElementsByClassName("gameoflife__reload");
+  reload[0].style.display = "flex";
+
   const numero_filas = Number(
     document.getElementsByClassName("gameoflife__numero_filas")[0].value
   );
@@ -270,6 +276,10 @@ function añadirVida() {
     this.className = "gameoflife__life";
     this.id = `${auxId[0]}-${auxId[1]}-1`;
   }
+}
+
+function loop() {
+  const loop = setInterval(verDemo, 500);
 }
 
 /*

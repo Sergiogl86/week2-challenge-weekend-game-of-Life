@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Platinum Sign";
+  src: url("./font/Platinum Sign.ttf");
+}
 body {
   box-sizing: border-box;
 }
@@ -8,16 +12,16 @@ body {
   justify-content: center;
   flex-direction: column;
   width: 600px;
-  height: 100vh;
+  height: 98vh;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50px;
-  width: 200px;
-  background-color: aqua;
+  height: 100px;
+  width: 600px;
+  font-family: "Platinum Sign";
 }
 
 .gameoflife {
@@ -27,7 +31,7 @@ body {
   flex-direction: column;
   width: 90%;
   flex-grow: 1;
-  background-color: royalblue;
+  background-color: black;
 }
 .gameoflife__cuadricula {
   display: flex;
@@ -35,7 +39,7 @@ body {
   justify-content: center;
   width: 90%;
   height: 75%;
-  background-color: black;
+  background-color: grey;
 }
 .gameoflife__cell-x {
   display: flex;
@@ -44,12 +48,46 @@ body {
   flex-direction: column;
   width: 20px;
   padding: 0px;
-  background-color: #0e0e68;
+  background-color: black;
 }
 .gameoflife__botones {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
   width: 90%;
   height: 20%;
-  background-color: #8fa02d;
+  background-color: black;
+  margin: 15px;
+}
+.gameoflife__botones--style {
+  width: 300px;
+  height: 50px;
+  background-color: black;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: white;
+  font-weight: bold;
+  color: white;
+}
+.gameoflife__botones--style:hover {
+  background-color: white;
+  color: black;
+}
+.gameoflife__reload {
+  display: none;
+}
+.gameoflife__panel {
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.gameoflife__dimensiones {
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
 }
 .gameoflife__dead {
   display: flex;
@@ -68,6 +106,15 @@ body {
   height: 15px;
   background-color: green;
   margin: 2px;
+}
+.gameoflife__creador {
+  font-weight: bold;
+  color: white;
+  font-size: 16px;
+}
+.gameoflife__footer {
+  align-self: flex-end;
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -11,36 +11,50 @@
   </head>
   <body>
     <div class="main">
-      <header class="header"><h1>Hola mundo!</h1></header>
+      <header class="header"><h1>GAME OF LIFE</h1></header>
       <main class="gameoflife">
-        //programa//
+        <br />
         <section class="gameoflife__cuadricula"></section>
         <section class="gameoflife__botones">
-          <div>
-            //boton1//
-            <button id="boton_1" onclick="Empezar()">Jugar!</button>
+          <div class="gameoflife__Crear">
+            <button class="gameoflife__botones--style" onclick="Empezar()">
+              ||Crear tablero||
+            </button>
           </div>
-          <div>
-            //boton2//
-            <button id="boton_2" onclick="verDemo()">Jugar!</button>
+          <div class="gameoflife__reload">
+            <button
+              class="gameoflife__botones--style"
+              onclick="location.reload()"
+            >
+              ||Reload||
+            </button>
           </div>
-          <div>
-            //Espacio 3//
+          <div class="gameoflife__panel">
+            <h2 class="gameoflife__dimensiones">Dimensiones -></h2>
             <input
-              type="text"
+              type="number"
               class="gameoflife__numero_filas"
               required
-              placeholder="Numero Filas"
+              placeholder="Filas - menor a 32"
+              max="32"
             />
             <input
-              type="text"
+              type="number"
               class="gameoflife__numero_columnas"
               required
-              placeholder="Numero Columnas"
+              placeholder="Columnas - menor a 22"
+              max="22"
             />
           </div>
+          <div>
+            <button class="gameoflife__botones--style" onclick="loop()">
+              ||Demo||
+            </button>
+          </div>
         </section>
-        <footer></footer>
+        <footer class="gameoflife__footer">
+          <h2 class="gameoflife__creador">Game Of Life - Sergio García</h2>
+        </footer>
       </main>
     </div>
   </body>
